@@ -16,7 +16,6 @@
 			"version": "18",
 			"nodeGypDependencies": false
 		},
-		"ghcr.io/devcontainers/features/zstd:1":{},
 		"ghcr.io/azure/azure-dev/azd:latest": {},
 		"ghcr.io/prulloac/devcontainer-features/ollama:1": {},
 		// az CLI is helpful for being able to login correctly with DefaultAzureCredential:
@@ -59,7 +58,7 @@
 		}
 	},
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip install -r requirements-dev.txt && pip install -e src/backend",
+	"postCreateCommand": "apt-get update && apt-get install -y zstd && pip install -r requirements-dev.txt && pip install -e src/backend",
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode"
 }
