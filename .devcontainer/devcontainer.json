@@ -17,9 +17,6 @@
 			"nodeGypDependencies": false
 		},
 		"ghcr.io/azure/azure-dev/azd:latest": {},
-		"ghcr.io/prulloac/devcontainer-features/ollama:1": {
-			"version": "1.0.1"
-		},
 		// az CLI is helpful for being able to login correctly with DefaultAzureCredential:
 		"ghcr.io/devcontainers/features/azure-cli": {}
 	},
@@ -60,7 +57,7 @@
 		}
 	},
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "apt-get update && apt-get install -y zstd && pip install -r requirements-dev.txt && pip install -e src/backend",
+	"postCreateCommand": "apt-get update && apt-get install -y zstd && pip install -r requirements-dev.txt && pip install -e src/backend && curl https://ollama.ai/install.sh | sh",
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode"
 }
